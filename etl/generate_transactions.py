@@ -4,6 +4,8 @@ from datetime import datetime, timedelta
 
 import pandas as pd
 
+from config.etl_config import ETLConfig
+
 
 # Merchant categories
 MERCHANT_CATEGORIES = [
@@ -125,11 +127,26 @@ def generate_dataset(
 
 if __name__ == "__main__":
 
-    print("\nStarting synthetic data generation...\n")
+    print(
+        "\nStarting synthetic data generation...\n"
+    )
+
+    print(
+        f"\nConfigured Transactions:"
+        f" {ETLConfig.NUM_TRANSACTIONS}"
+    )
+
+    print(
+        f"Configured Fraud Ratio:"
+        f" {ETLConfig.FRAUD_RATIO}"
+    )
 
     dataset = generate_dataset(
-        num_transactions=5000,
-        fraud_ratio=0.05
+        num_transactions=
+        ETLConfig.NUM_TRANSACTIONS,
+
+        fraud_ratio=
+        ETLConfig.FRAUD_RATIO
     )
 
     output_path = "data/transactions.csv"

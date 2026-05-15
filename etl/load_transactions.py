@@ -72,7 +72,13 @@ def load_dataset():
                 amount_log=row["amount_log"],
                 amount_category=row[
                     "amount_category"
-                ]
+                ],
+
+                 # Risk scoring
+    risk_score=row["risk_score"],
+    risk_level=row["risk_level"]
+
+                
             )
 
             transactions_batch.append(
