@@ -11,3 +11,4 @@ flask-jwt-extended
 python-dotenv
 joblib
 gunicorn
+flask-cors
