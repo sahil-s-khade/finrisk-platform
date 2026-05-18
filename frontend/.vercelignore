@@ -1,0 +1,9 @@
+../ml
+../models
+../data
+../venv
+../api
+../services
+../etl
+*.pkl
+*.joblib
