@@ -1,12 +1,54 @@
+# Python
+
 venv/
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# Environment Variables
+
 .env
+
+# Jupyter
+
 .ipynb_checkpoints/
+
+# macOS
+
 .DS_Store
-pytest_cache/
+
+# Testing / Coverage
+
+.pytest_cache/
 coverage.xml
 htmlcov/
+
+# Logs
+
 logs/
+*.log
+
+# ML Models / Data
+
 *.pkl
 data/
+
+# Frontend
+
+node_modules/
+build/
+dist/
+
+# VS Code
+
+.vscode/
+
+# React
+
+frontend/node_modules/
+frontend/build/
+
+# Cache
+
+.cache/
