@@ -826,3 +826,41 @@ def fraud_dashboard_overview():
     finally:
 
         db.close()
+
+
+from flask import Blueprint, jsonify
+from flask_jwt_extended import jwt_required
+
+transactions_bp = Blueprint("transactions", __name__)
+
+
+@transactions_bp.route("/recent", methods=["GET"])
+@jwt_required()
+def get_recent_transactions():
+
+    sample_transactions = [
+
+        {
+            "transaction_id": "TXN-1001",
+            "amount": 1200,
+            "risk_score": 12,
+            "status": "SAFE"
+        },
+
+        {
+            "transaction_id": "TXN-1002",
+            "amount": 98000,
+            "risk_score": 91,
+            "status": "FRAUD"
+        },
+
+        {
+            "transaction_id": "TXN-1003",
+            "amount": 4500,
+            "risk_score": 32,
+            "status": "SAFE"
+        }
+
+    ]
+
+    return jsonify(sample_transactions), 200

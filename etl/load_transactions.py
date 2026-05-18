@@ -49,34 +49,52 @@ def load_dataset():
                 continue
 
             transaction = Transaction(
-                transaction_id=row["transaction_id"],
-                user_id=row["user_id"],
-                amount=row["amount"],
-                merchant_category=row[
-                    "merchant_category"
-                ],
-                timestamp=row["timestamp"],
-                location=row["location"],
-                is_fraud=row["is_fraud"],
 
-                # Engineered features
-                transaction_hour=row[
-                    "transaction_hour"
-                ],
-                day_of_week=row[
-                    "day_of_week"
-                ],
-                is_high_risk_merchant=row[
-                    "is_high_risk_merchant"
-                ],
-                amount_log=row["amount_log"],
-                amount_category=row[
-                    "amount_category"
-                ],
+    transaction_id=row["transaction_id"],
 
-                 # Risk scoring
-    risk_score=row["risk_score"],
-    risk_level=row["risk_level"]
+    user_id=row["user_id"],
+
+    amount=row["amount"],
+
+    merchant_category=row["merchant_category"],
+
+    timestamp=row["timestamp"],
+
+    location=row["location"],
+
+    is_fraud=row["is_fraud"],
+
+
+    # Optional engineered features
+
+    risk_score=row.get("risk_score", 0),
+
+    risk_level=row.get("risk_level", "low"),
+
+    transaction_hour=row.get(
+        "transaction_hour", 0
+    ),
+
+    day_of_week=row.get(
+        "day_of_week", 0
+    ),
+
+    is_high_risk_merchant=row.get(
+        "is_high_risk_merchant", False
+    ),
+
+    amount_log=row.get(
+        "amount_log", 0
+    ),
+
+    amount_category=row.get(
+        "amount_category", "low"
+    ),
+
+    alert_status=row.get(
+        "alert_status", "normal"
+    )
+
 
                 
             )

@@ -7,6 +7,11 @@ from api.auth import auth_bp
 
 from api.transactions import transaction_bp
 
+from flask_cors import CORS
+
+from api.routes.explainability \
+import explainability_bp
+
 # Initialize JWT manager
 jwt = JWTManager()
 
@@ -17,6 +22,8 @@ def create_app():
     """
 
     app = Flask(__name__)
+
+    CORS(app)
 
     # Load configuration
     app.config["SECRET_KEY"] = Config.SECRET_KEY
@@ -48,6 +55,12 @@ def create_app():
     transaction_bp,
     url_prefix="/api/v1"
 )
+    
+    app.register_blueprint(
+    explainability_bp,
+    url_prefix="/api/v1"
+)
+    
     return app
 
 
