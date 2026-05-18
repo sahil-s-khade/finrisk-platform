@@ -23,7 +23,11 @@ def create_app():
 
     app = Flask(__name__)
 
-    CORS(app)
+    CORS(
+    app,
+    resources={r"/api/*": {"origins": "*"}},
+    supports_credentials=True
+)
 
     # Load configuration
     app.config["SECRET_KEY"] = Config.SECRET_KEY
