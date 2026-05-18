@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://127.0.0.1:5000/api/v1",
+  baseURL: "https://finrisk-backend.onrender.com/api/v1",
 });
 
 export const loginUser = async () => {
