@@ -22,8 +22,7 @@ function Dashboard() {
 
 
   // JWT TOKEN
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3OTA5NDk0MiwianRpIjoiMWJjYTg1ZjctODkxMC00NTJhLWE3OGMtMjNhZGJlMjc4NzFiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImFkbWluIiwibmJmIjoxNzc5MDk0OTQyLCJjc3JmIjoiNmFhNmViMTctMzk1Ni00MzcxLTk1YjEtMDg1ZTI1YzFjYmMzIiwiZXhwIjoxNzc5MDk1ODQyfQ.OdauDc2rv-82hQnldgTcxu9ZsTKOvtj0Z1qg_DIbifc";
+ const token = localStorage.getItem("token");
 
 
   useEffect(() => {

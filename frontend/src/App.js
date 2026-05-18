@@ -23,8 +23,26 @@ import LiveMonitoring from "./pages/LiveMonitoring";
 
 import LandingPage from "./pages/LandingPage";
 
+import { useEffect } from "react";
+import { loginUser } from "./services/api";
 
 function App() {
+
+  useEffect(() => {
+  const authenticate = async () => {
+    try {
+      const token = await loginUser();
+
+      localStorage.setItem("token", token);
+
+      console.log("TOKEN SAVED");
+    } catch (err) {
+      console.error("LOGIN FAILED", err);
+    }
+  };
+
+  authenticate();
+}, []);
 
   return (
 

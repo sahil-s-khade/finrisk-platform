@@ -13,9 +13,7 @@ function ExplainableAI() {
 
   const [loading, setLoading] = useState(false);
 
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3OTA5MzA0MCwianRpIjoiZjIyMzExYjQtOTZmMS00YzIwLTk5YzItMTNjMTcxNjdlYTk4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImFkbWluIiwibmJmIjoxNzc5MDkzMDQwLCJjc3JmIjoiOWEwM2E4MjAtMTEwNi00MWE0LWIzNTYtMGM2ZDNlZTA1ODZkIiwiZXhwIjoxNzc5MDkzOTQwfQ.o67zpn5ibKEbkqrWiGxNXQ81VIeKms4Wtif1hDxeyhQ";
-
+  const token = localStorage.getItem("token");
 
   const samplePayload = {
 
